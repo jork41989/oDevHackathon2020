@@ -1,11 +1,12 @@
 const Home = require('./home')
 const Sort = require('./sort')
 const Process = require('./process')
+const Reuse = require('./reuse')
 
 class Board{
   constructor(gamediv){
     this.gameDiv = gamediv
-    this.recyclePoints = 0;
+    this.recyclePoints = 1;
     this.lbsHome = 12000000;
     this.lbsSort = 0;
     this.lbsProcess = 0;
@@ -16,6 +17,8 @@ class Board{
   pointCal(){
     let points = document.getElementById("currency_count")
     points.innerHTML = this.recyclePoints.toFixed(2)
+      this.endCheck();
+    
   }
 
   resetPoints(){
@@ -41,6 +44,17 @@ class Board{
     pnd.innerHTML = this.lbsReuse.toFixed(2)
   }
 
+  endCheck(){
+    let totals = this.lbsReuse + this.lbsSort + this.lbsProcess + this.lbsHome
+
+    if (totals === 0){
+      console.log("you did it!!!!!!!!", totals)
+      let mode = document.getElementById("modal")
+      mode.classList.remove("hidden")
+    }
+
+  }
+
 
   renderHomeToSort(){
     this.displaySortLbs();
@@ -64,6 +78,8 @@ class Board{
     const Homev = new Home(this)
     const SortN = new Sort(this)
     const Pros = new Process(this)
+    const Reuses = new Reuse(this)
+    Reuses.start();
     Homev.start();
     SortN.start();
     Pros.start();

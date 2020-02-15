@@ -36,13 +36,14 @@ class Process {
   prosPS() {
   if (this.pCount >= 1) {
     setInterval(() => {
-
-      if (this.board.lbsProcess <= (this.pCount * 2)) {
+      if (this.board.lbsProcess <= (this.pCount * 2) && this.board.lbsProcess != 0) {
         this.board.lbsReuse += this.pCount * 2
         this.board.lbsProcess = 0
         this.board.recyclePoints += this.pCount * 2
         this.board.renderProcToMfg()
-      } else {
+      } else if (this.board.lbsProcess === 0 && this.board.lbsSort === 0){
+        clearInterval(this)
+      }else {
         this.board.lbsReuse += this.pCount * 2
         this.board.lbsProcess -= this.pCount * 2
         this.board.recyclePoints += this.pCount * 2

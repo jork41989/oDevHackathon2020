@@ -29,6 +29,8 @@ class Sort{
         }
         if (this.sortCount === 1) {
           this.sortPS();
+          let img = document.getElementById("cart")
+          img.classList.add("movement")
         }
     })
 
@@ -50,7 +52,6 @@ class Sort{
         } else {
           this.board.lbsSort -= (this.sortCount)
           this.board.lbsProcess = this.board.lbsProcess + (this.sortCount * .15)
-          console.log(this.board.lbsProcess)
           this.board.recyclePoints = (this.board.recyclePoints + (this.sortCount * 2));
           this.board.renderSortToProc();
         }

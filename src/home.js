@@ -27,6 +27,8 @@ class Home{
       }
       if(this.truckCount === 1){
         this.truckPS();
+        let img = document.getElementById("truck")
+        img.classList.add("movement")
       }
     })
     
@@ -44,7 +46,6 @@ class Home{
           this.board.recyclePoints = (this.board.recyclePoints + (this.truckCount * 2));
           this.board.renderHomeToSort();
           clearInterval()
-
         } else {
           this.board.lbsHome -= (this.truckCount * 2)
           this.board.lbsSort += (this.truckCount * 2)
