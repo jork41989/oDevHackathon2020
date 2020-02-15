@@ -91,9 +91,20 @@
   !*** ./src/board.js ***!
   \**********************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const Home = __webpack_require__(/*! ./home */ \"./src/home.js\")\n\nclass Board{\n  constructor(gamediv){\n    this.gameDiv = gamediv\n    this.recyclePoints = 0;\n    this.lbsHome = 12000000;\n    this.lbsSort = 0;\n    this.lbsProcess = 0;\n    this.lbsReuse = 0;\n    this.sold = 0\n  }\n\n  pointCal(){\n    let points = document.getElementById(\"currency_count\")\n    points.innerHTML = this.recyclePoints\n  }\n\n  resetPoints(){\n    this.recyclePoints = 1\n    this.pointCal()\n  }\n\n  displaySortLbs(){\n    let pSort = document.getElementById(\"storePoundCount\")\n    pSort.innerHTML = this.lbsSort\n  }\n\n  displayHomeLbs() {\n    let pnd = document.getElementById(\"homePoundCount\")\n    pnd.innerHTML = this.lbsHome\n  }\n  displayProcLbs() {\n    let pnd = document.getElementById(\"processPoundCount\")\n    pnd.innerHTML = this.lbsProcess\n  }\n  displayReuseLbs() {\n    let pnd = document.getElementById(\"mfcPoundCount\")\n    pnd.innerHTML = this.lbsReuse\n  }\n\n\n  renderHomeToSort(){\n    this.displaySortLbs();\n    this.displayHomeLbs();\n    this.pointCal();\n  }\n\n  renderSortToProc(){\n    this.displaySortLbs();\n    this.displayProcLbs();\n    this.pointCal();\n  }\n\n  renderProcToMfg(){\n    this.displayProcLbs();\n    this.displayReuseLbs();\n    this.pointCal();\n  }\n\n  start(){\n    const Homev = new Home(this)\n    Homev.start()\n    this.resetPoints()\n    this.displayHomeLbs();\n  }\n\n  \n}\n\nmodule.exports = Board;\n\n//# sourceURL=webpack:///./src/board.js?");
+
+/***/ }),
+
+/***/ "./src/home.js":
+/*!*********************!*\
+  !*** ./src/home.js ***!
+  \*********************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class Board{\n  constructor(gamediv){\n    \n  }\n\n  \n}\n\n//# sourceURL=webpack:///./src/board.js?");
+eval("class Home{\n  constructor(board){\n    this.board = board\n    this.truckCount = 0;\n    this.truckCost = 1;\n  }\n\n  displayTruckCost(){\n    let cst = document.getElementById(\"buyTruck\")\n    cst.innerHTML = `Cost: ${this.truckCost}`\n  }\n  displayTruckCount(){\n    let cnt = document.getElementById(\"truckCount\")\n    cnt.innerHTML = this.truckCount\n  }\n\n  buyTruck(){\n    let truckButton = document.getElementById(\"buyTruck\")\n    truckButton.addEventListener(\"click\", () => {\n      if (this.board.recyclePoints >= this.truckCost) {\n        this.board.recyclePoints -= this.truckCost;\n        this.truckCount += 1;\n        this.truckCost = (this.truckCost * 1.1).toFixed(2);\n        this.displayTruckCost();\n        this.displayTruckCount();\n        this.board.pointCal();\n      }\n      if(this.truckCount === 1){\n        this.truckPS();\n      }\n    })\n    \n  }\n\n  \n\n  truckPS(){\n    if (this.truckCount >= 1){\n      setInterval(() => {\n\n        if (this.board.lbsHome <= (this.truckCount * 2)){\n          this.board.lbsSort += this.board.lbsHome\n          this.board.lbsHome = 0\n          this.board.recyclePoints = (this.board.recyclePoints + (this.truckCount * 2));\n          this.board.renderHomeToSort();\n          clearInterval()\n\n        } else {\n          this.board.lbsHome -= (this.truckCount * 2)\n          this.board.lbsSort += (this.truckCount * 2)\n          this.board.recyclePoints = (this.board.recyclePoints + (this.truckCount * 2));\n          this.board.renderHomeToSort();\n        }\n      }, 1000)\n    }\n  }\n\n  start(){\n    this.displayTruckCost()\n    this.buyTruck()\n  }\n}\n\nmodule.exports = Home;\n\n//# sourceURL=webpack:///./src/home.js?");
 
 /***/ }),
 
@@ -105,7 +116,7 @@ eval("class Board{\n  constructor(gamediv){\n    \n  }\n\n  \n}\n\n//# sourceURL
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ \"./src/board.js\");\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_board__WEBPACK_IMPORTED_MODULE_0__);\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const gameDiv = document.getElementById(\"game\")\n  // const board = new Board(gameDiv)\n})\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ \"./src/board.js\");\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_board__WEBPACK_IMPORTED_MODULE_0__);\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const gameDiv = document.getElementById(\"game\")\n  const board = new _board__WEBPACK_IMPORTED_MODULE_0___default.a(gameDiv)\n  board.start()\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
