@@ -1,5 +1,6 @@
 const Home = require('./home')
 const Sort = require('./sort')
+const Process = require('./process')
 
 class Board{
   constructor(gamediv){
@@ -14,7 +15,7 @@ class Board{
 
   pointCal(){
     let points = document.getElementById("currency_count")
-    points.innerHTML = this.recyclePoints
+    points.innerHTML = this.recyclePoints.toFixed(2)
   }
 
   resetPoints(){
@@ -62,8 +63,10 @@ class Board{
   start(){
     const Homev = new Home(this)
     const SortN = new Sort(this)
+    const Pros = new Process(this)
     Homev.start();
     SortN.start();
+    Pros.start();
     this.resetPoints();
     this.displayHomeLbs();
   }

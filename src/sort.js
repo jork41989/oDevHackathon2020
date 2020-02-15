@@ -42,11 +42,10 @@ class Sort{
       setInterval(() => {
 
         if (this.board.lbsSort <= (this.sortCount * 2)) {
-          this.board.lbsProcess += this.board.lbsSort
+          this.board.lbsProcess += this.board.lbsSort * .15
           this.board.lbsSort = 0
           this.board.recyclePoints = (this.board.recyclePoints + (this.sortCount * 2));
           this.board.renderSortToProc();
-          clearInterval()
 
         } else {
           this.board.lbsSort -= (this.sortCount)
