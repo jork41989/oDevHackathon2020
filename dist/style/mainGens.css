@@ -20,7 +20,14 @@
 
 .menu{
   margin-left: 10%;
-  min-width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.menu div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 .mainIcon {
@@ -48,3 +55,6 @@
   background-color: teal;
 }
 
+.countTitle{
+  text-align: center;
+}
