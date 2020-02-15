@@ -1,0 +1,11 @@
+.currency{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1%;
+}
+
+#currency_title{
+  font-size: x-large;
+  color: white
+}

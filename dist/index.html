@@ -3,15 +3,133 @@
 
 
 <head>
-
+  <link href="./style/game.css" rel="stylesheet">
+  <link href="./style/currency.css" rel="stylesheet">
+  <link href="./style/mainGens.css" rel="stylesheet">
+  
 </head>
 
 <body>
   <script src="main.js"></script>
   <div id="game">
+    <div class="currency">
+      <div id="currency_title">
+        Recycle Points
+      </div>
+      <div id="currency_count">
+        0
+      </div>
+    </div>
 
+    <div id="mainGens">
+      <div class="genRow" id="homeRow">
+        <div class="genIcon">
+          <div class="iconImg">
+            <img src="./images/home.svg" alt="home" class="mainIcon">
+          </div>
+          
+          <div class="menu" id="homeMenu">
+            <div class="countGen">
+              <div class="countTitle">Number of Trucks</div>
+              <div class="GenCount" id=truckCount>0</div>
+              <div>Buy more</div>
+              <button id="buyTruck">Cost: 0</button>
+            </div>
+          </div>
+        </div>
+ 
+        <div id="animationHome" class="annimation">
+          truck here
+        </div>
+        <div class="endDest">
+          <img src="./images/warehouse.svg" alt="sort storage" class="destIcon">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="genRow" id="sortRow">
+      <div class="genIcon">
+        <div class="iconImg">
+          <img src="./images/warehouse.svg"" alt="home" class="mainIcon">
+        </div>
+    
+        <div class="menu" id="homeMenu">
+          <img src="./images/menu.svg" alt="home_menu">
+        </div>
+      </div>
+      
+      <div id="animationHome" class="annimation">
+        belt
+      </div>
+
+      <div class="endDest">
+        <img src="./images/bin.svg" alt="sort storage" class="destIcon">
+      </div>
+    
+      </div>
+
+
+      <div class="genRow" id="processRow">
+        <div class="genIcon">
+          <div class="iconImg">
+            <img src="./images/bin.svg"" alt=" home" class="mainIcon">
+          </div>
+      
+          <div class="menu" id="homeMenu">
+            <img src="./images/menu.svg" alt="home_menu">
+          </div>
+        </div>
+      
+        <div id="animationHome" class="annimation">
+          belt
+        </div>
+      
+        <div class="endDest">
+          <img src="./images/dumpster.svg" alt="sort storage" class="destIcon">
+        </div>
+      
+      </div>
+
+      <div class="genRow" id="reuseRow">
+        <div class="genIcon">
+          <div class="iconImg">
+            <img src="./images/factory.svg"" alt=" home" class="mainIcon">
+          </div>
+      
+          <div class="menu" id="homeMenu">
+            <img src="./images/menu.svg" alt="home_menu">
+          </div>
+        </div>
+      
+        <div id="animationHome" class="annimation">
+          belt
+        </div>
+      
+        <div class="endDest">
+          <img src="./images/shop.svg" alt="sort storage" class="destIcon">
+        </div>
+      
+      </div>
+    
+
+    <div id="credits">
+        Icons made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a
+          href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        </div>
+    </div>
+    
+  </div>
+
+
+
+
+    
+    
 
   </div>
+
+  
 </body>
 
 

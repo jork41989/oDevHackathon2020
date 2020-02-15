@@ -1,0 +1,50 @@
+#mainGens{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.genRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1%;
+}
+
+.genIcon{
+  
+  display: flex;
+  flex-direction: row;
+  width: 15%;
+}
+
+.menu{
+  margin-left: 10%;
+  min-width: 30px;
+}
+
+.mainIcon {
+  max-height: 100px;
+}
+
+.iconImg{
+  min-width: 100px;
+}
+
+.destIcon{
+  max-height: 100px;
+}
+
+.endDest{
+  width: 15%;
+  align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.annimation{
+  width: 75%;
+  background-color: teal;
+}
+

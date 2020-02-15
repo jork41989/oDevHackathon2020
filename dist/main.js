@@ -86,14 +86,26 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/index.js":
+/***/ "./src/board.js":
 /*!**********************!*\
-  !*** ./src/index.js ***!
+  !*** ./src/board.js ***!
   \**********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const gameDiv = document.getElementById(\"game\")\n\n\n})\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("class Board{\n  constructor(gamediv){\n    \n  }\n\n  \n}\n\n//# sourceURL=webpack:///./src/board.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ \"./src/board.js\");\n/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_board__WEBPACK_IMPORTED_MODULE_0__);\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function () {\n  const gameDiv = document.getElementById(\"game\")\n  // const board = new Board(gameDiv)\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
