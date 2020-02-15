@@ -1,4 +1,5 @@
 const Home = require('./home')
+const Sort = require('./sort')
 
 class Board{
   constructor(gamediv){
@@ -60,8 +61,10 @@ class Board{
 
   start(){
     const Homev = new Home(this)
-    Homev.start()
-    this.resetPoints()
+    const SortN = new Sort(this)
+    Homev.start();
+    SortN.start();
+    this.resetPoints();
     this.displayHomeLbs();
   }
 
