@@ -93,6 +93,16 @@
   align-items: center;
   text-align: center;
   width: 200px;
+  font-size: large;
+ 
+}
+
+.poundsCountTitle{
+ margin-bottom: 5px;
+}
+
+.poundsCountNum{
+  font-size: xx-large;
 }
 
 
