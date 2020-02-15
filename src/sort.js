@@ -6,8 +6,9 @@ class Sort{
   }
 
   displaySortCost(){
+    let total = this.sortCost
     let cost = document.getElementById("buySort")
-    cost.innerHTML = `Cost: ${this.sortCost}`
+    cost.innerHTML = `Cost: ${total}`
   }
   
   displaySortCount(){
@@ -41,15 +42,16 @@ class Sort{
       setInterval(() => {
 
         if (this.board.lbsSort <= (this.sortCount * 2)) {
-          this.board.lbsProcess += this.board.lbsHome
-          this.board.lbsHome = 0
+          this.board.lbsProcess += this.board.lbsSort
+          this.board.lbsSort = 0
           this.board.recyclePoints = (this.board.recyclePoints + (this.sortCount * 2));
           this.board.renderSortToProc();
           clearInterval()
 
         } else {
-          this.board.lbsSort -= (this.sortCount * 2)
-          this.board.lbsProcess += (this.sortCount * 2)
+          this.board.lbsSort -= (this.sortCount)
+          this.board.lbsProcess = this.board.lbsProcess + (this.sortCount * .15)
+          console.log(this.board.lbsProcess)
           this.board.recyclePoints = (this.board.recyclePoints + (this.sortCount * 2));
           this.board.renderSortToProc();
         }

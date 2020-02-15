@@ -24,20 +24,20 @@ class Board{
 
   displaySortLbs(){
     let pSort = document.getElementById("storePoundCount")
-    pSort.innerHTML = this.lbsSort
+    pSort.innerHTML = this.lbsSort.toFixed(2)
   }
 
   displayHomeLbs() {
     let pnd = document.getElementById("homePoundCount")
-    pnd.innerHTML = this.lbsHome
+    pnd.innerHTML = this.lbsHome.toFixed(2)
   }
   displayProcLbs() {
     let pnd = document.getElementById("processPoundCount")
-    pnd.innerHTML = this.lbsProcess
+    pnd.innerHTML = this.lbsProcess.toFixed(2)
   }
   displayReuseLbs() {
     let pnd = document.getElementById("mfcPoundCount")
-    pnd.innerHTML = this.lbsReuse
+    pnd.innerHTML = this.lbsReuse.toFixed(2)
   }
 
 
